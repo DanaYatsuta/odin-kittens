@@ -1,3 +1,11 @@
+<% if kitten.errors.any? %>
+  <ul>
+    <% kitten.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model: kitten do |form| %>
   <%= form.label :name %><br>
   <%= form.text_field :name %><br>
